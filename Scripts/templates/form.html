@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator walutowy</title>
+</head>
+<body>
+    <h2>Kalkulator walutowy</h2>
+    <form method="POST">
+        <label for="currency">Wybierz walutę:</label>
+        <select id="currency" name="currency">
+            {% for rate in currency_rates %}
+                <option value="{{ rate['code'] }}">{{ rate['currency'] }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="amount">Ilość:</label>
+        <input type="text" id="amount" name="amount">
+        <br>
+        <button type="submit">Przelicz</button>
+    </form>
+</body>
+</html>
